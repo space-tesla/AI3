@@ -1,13 +1,5 @@
 # Q.2 Write a Python program to implement the Depth First Search (DFS) algorithm. Refer to the following graph as input for the program. [Initial node = 2, Goal node = 7]
 
-Graph Structure:
-
-  1 -- 2 -- 6
-  |  / |    |
-  3 -- 4 -- 5 -- 7
-Program:
-
-# Define the graph as an adjacency list
 graph = {
     1: [2, 3],
     2: [1, 4, 5, 6],
@@ -18,15 +10,14 @@ graph = {
     7: [5]
 }
 
-# Depth First Search function
 def dfs(graph, start, goal, visited=None):
     if visited is None:
         visited = set()
     visited.add(start)
-    print(start, end=" ")  # Print the current node
+    print(start, end=" ")  
 
     if start == goal:
-        return True  # Goal node found
+        return True  
 
     for neighbor in graph[start]:
         if neighbor not in visited:
@@ -34,7 +25,6 @@ def dfs(graph, start, goal, visited=None):
                 return True
     return False
 
-# Initialize DFS from node 2 to find node 7
 print("DFS traversal path:")
 dfs(graph, 2, 7)
 
